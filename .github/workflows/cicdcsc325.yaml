@@ -1,6 +1,6 @@
 name: CI/CD Pipeline for CSC325 Django Project
 
-On:
+on:
   Push:
     branches:
       - main

@@ -50,3 +50,7 @@ class HelloApiTests(TestCase):
         response = self.client.get(reverse('hello_api'))
         self.assertEqual(response.json()["message"], "Hello from the CSC325 Django API")
         self.assertEqual(response.json()["course"], "CSC325")
+
+    def test_hello_api_returns_student(self):
+        response = self.client.get(reverse('hello_api'))
+        self.assertEqual(response.json()["student"], "Carlos Gonzalez")

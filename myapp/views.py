@@ -14,4 +14,5 @@ def hello_api(request):
     return Response({
         "message": "Hello from the CSC325 Django API",
         "course": "CSC325",
+        "student": "Carlos Gonzalez",
     })

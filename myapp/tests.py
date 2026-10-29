@@ -38,3 +38,15 @@ class UnknownPageTests(TestCase):
     def test_unknown_page_returns_404(self):
         response = self.client.get('/this-page-does-not-exist/')
         self.assertEqual(response.status_code, 404)
+
+
+class HelloApiTests(TestCase):
+
+    def test_hello_api_status_code(self):
+        response = self.client.get(reverse('hello_api'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_hello_api_returns_json_message(self):
+        response = self.client.get(reverse('hello_api'))
+        self.assertEqual(response.json()["message"], "Hello from the CSC325 Django API")
+        self.assertEqual(response.json()["course"], "CSC325")
